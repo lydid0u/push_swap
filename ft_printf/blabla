@@ -1,0 +1,92 @@
+- %c Affiche un seul caractère. 
+--> putchar OK
+
+• %s Affiche une chaîne de caractères (telle que définie par la convention C).
+--> putstr OK
+
+• %p L’argument de pointeur void * doit être affiché en hexadécimal.
+--> jsp
+
+• %d Affiche un nombre décimal (base 10).
+--> putnbr OK
+
+• %i Affiche un entier en base 10.
+--> putnbr OK
+
+• %u Affiche un nombre décimal non signé (que positif) (base 10).
+--> putnbr ou on gere que les + OK
+
+• %x Affiche un nombre en hexadécimal (base 16) avec des lettres minuscules.
+--> putnbr base en minuscule
+
+• %X Affiche un nombre en hexadécimal (base 16) avec des lettres majuscules.
+--> putnbr base en MAJUSCULE
+
+• %% Affiche un signe pourcentage
+--> putchar d'un % OK
+
+----------------------------------------------------------------------------------------
+
+!!! au cas ou y a pas de % et cc'est juste une phrase, exemple :
+
+printf("j'ai eu ce score : %d", a);
+
+peut etre le mettre dans un else et le print avec put str
+
+!!! au cas ou, exemple :
+
+int a = 10; 
+
+printf("j'ai eu ce score : %d", a);
+
+comment recup l'info et l'imprimer ?
+
+-------------------------------------------------------------------------------
+
+int ft_printf(const char *, ...)
+
+on renvoie un int pour le nombre de caractere affiche a l'ecran mais avec write ca imprime bien
+sur le terminal
+
+-----------------------------------------------------------------------------------
+putnbr_base :  tu divises par 16 : 
+42/16 = 2 donc dans la base hexa 0123456789abcdef on va a la 2e position qui est 2 puis 
+il reste 10 (42 - 32) donc on va a la 10e position qui est un a
+donc 42 en hexa = 2a
+
+-----------------------------------------------------------------------------------
+
+fonctions variadiques
+
+	va_list : definit 
+
+c'est pas une fonction c'est une structure (comme un int, un char etc...)
+Cette variable est utilisée pour stocker la liste d'arguments variables passés à la fonction (les éléments qui sont dans le "...").
+
+	va_start : initialise la variable
+
+initialise le arg_list quon a cree juste avant avec va_list et on peux maintenant l'utiliser avec va_arg et va_end 
+prend le va list quon a cree juste avant, et le dernier parametre (ca sera tjrs celui juste avant les ...)
+
+	va_arg : accede aux argument variable de la liste
+
+prend en paramètre va_list et ... et renvoie un ...
+a chq fois quon l'appelle ca modifie arg_list pour donner l'argument suivant quand on le rappelle (en gros ca i++ automatiquement et ca passe a la valeur d'apres quoi) --> ca avance dans la liste
+
+	va_end :  libere les ressources
+
+- prend en paramètre le va_list et va le "detruire"/liberer les ressources 
+une fois que le fonction a fini d'utiliser les arguments variables 
+- ne peux être appelé sans va_start avant
+
+------------------------------------------------
+
+ft_printf("%d, %c", 42, n);
+
+"%d, %c" = const char *format
+42, n = "..." --> varaible argument
+
+--------------------------------------------------------
+
+regarder la video sur l'intra ?
+

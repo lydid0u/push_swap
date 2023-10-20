@@ -6,7 +6,7 @@
 /*   By: lboudjel <lboudjel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 14:25:07 by lboudjel          #+#    #+#             */
-/*   Updated: 2023/10/20 17:45:29 by lboudjel         ###   ########.fr       */
+/*   Updated: 2023/10/20 18:22:38 by lboudjel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,10 @@ int	main(int argc, char **argv)
 		return 1;
 		// split;
 	if (argc > 2)
+	{
+		//create_list();
 		if (argv_double(stack_a) == 0)
 			return(0);
+	}
 	return (1);	
 } 

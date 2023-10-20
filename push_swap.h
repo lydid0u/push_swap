@@ -31,4 +31,8 @@ int					ft_atoi(char *str);
 int					ft_list_size(t_stack *stack_a);
 int					argv_double(t_stack *stack_a);
 
+//parsing
+t_stack				new_node(t_stack *stack_a, char **argv);
+t_stack				*ft_lstnew(void *nbr);
+
 #endif

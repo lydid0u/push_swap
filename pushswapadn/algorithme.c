@@ -1,33 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   algorithme.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lboudjel <lboudjel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/20 14:25:07 by lboudjel          #+#    #+#             */
-/*   Updated: 2023/10/20 17:45:29 by lboudjel         ###   ########.fr       */
+/*   Created: 2023/10/16 19:16:55 by lboudjel          #+#    #+#             */
+/*   Updated: 2023/10/16 19:25:54 by lboudjel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "pushswap.h"
 
-
-int	main(int argc, char **argv)
+void	nombre_de_coup(t_stack **pile_a, t_stack **pile_b)
 {
-	t_stack	*stack_a;
-	t_stack	*stack_b;
-
-	stack_a = NULL;
-	stack_b = NULL;
-	(void)argv;
-	if (argc < 2)
-		return (ft_printf("Error\n"), 0);
-	if (argc == 2)
-		return 1;
-		// split;
-	if (argc > 2)
-		if (argv_double(stack_a) == 0)
-			return(0);
-	return (1);	
-} 
+	while ()
+	{
+		if (stack_amount_nodes(pile_a) < stack_amount_nodes(pile_a) / 2)
+		{
+			
+		}
+	}
+}

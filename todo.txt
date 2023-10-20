@@ -1,0 +1,8 @@
+parsing :
+
+    - doublons
+    - si tout dans ' ' : split
+    - sinon : prendre chaque nombre et les mettre dans de nouveaux noeuds
+
+- faire un print_lst
+- free_node et free_lst

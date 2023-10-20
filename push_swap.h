@@ -28,5 +28,7 @@ void				rrr(t_stack **stack_a, t_stack **stack_b);
 //utils
 t_stack				*get_last_node(t_stack *stack);
 int					ft_atoi(char *str);
+int					ft_list_size(t_stack *stack_a);
+int					argv_double(t_stack *stack_a);
 
 #endif

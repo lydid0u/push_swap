@@ -6,7 +6,7 @@
 /*   By: lboudjel <lboudjel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/11 19:16:52 by lboudjel          #+#    #+#             */
-/*   Updated: 2023/10/16 16:09:20 by lboudjel         ###   ########.fr       */
+/*   Updated: 2023/10/20 14:22:36 by lboudjel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,4 +57,3 @@ void	ss(t_stack **stack_a, t_stack **stack_b)
 	(*stack_b)->next->nbr = temp_b;
 	write(1, "ss\n", 3);
 }
-

@@ -10,7 +10,7 @@ PRINTF		= ft_printf
 
 FT_PRINTF	= ft_printf/libftprintf.a
 
-SRC	 = ./command/push.c ./command/swap.c ./command/rotate.c ./command/reverse_rotate.c push_swap.c utils.c 
+SRC	 = ./command/push.c ./command/swap.c ./command/rotate.c ./command/reverse_rotate.c free.c push_swap.c utils.c sort_3_and_5.c
 
 OBJ	= ${SRC:.c=.o}
 

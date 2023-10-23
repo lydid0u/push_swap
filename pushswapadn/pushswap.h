@@ -31,7 +31,7 @@ char	**ft_put_word(char *str, char charset, char **dest);
 char	**ft_split(const char *str, char charset);
 int		main(int argc, char **argv);
 int		one_argument(t_stack **pile_a, char *arg);
-void	new_node(t_stack **pile_a, char *av1);
+void	create_node(t_stack **pile_a, char *av1);
 int		ft_atoi(const char *str);
 t_stack	*get_last_node(t_stack *pile_a);
 int		stack_amount_nodes(t_stack *pile_a);

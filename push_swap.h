@@ -29,10 +29,10 @@ void				rrr(t_stack **stack_a, t_stack **stack_b);
 t_stack				*get_last_node(t_stack *stack);
 int					ft_atoi(char *str);
 int					ft_list_size(t_stack *stack_a);
-int					argv_double(t_stack *stack_a);
+int					check_doubles(t_stack *stack_a);
 
 //parsing
-t_stack				new_node(t_stack *stack_a, char **argv);
+t_stack				create_node(t_stack *stack_a, char **argv);
 t_stack				*ft_lstnew(void *nbr);
 
 #endif

@@ -21,6 +21,8 @@ int	main(int argc, char **argv)
 	stack_a = NULL;
 	stack_b = NULL;
 	(void)argv;
+	check_doubles(stack_a);
+	
 	if (argc < 2)
 		return (ft_printf("Error\n"), 0);
 	if (argc == 2)
@@ -29,7 +31,7 @@ int	main(int argc, char **argv)
 	if (argc > 2)
 	{
 		//create_list();
-		if (argv_double(stack_a) == 0)
+		if (check_doubles(stack_a) == 0)
 			return(0);
 	}
 	return (1);	

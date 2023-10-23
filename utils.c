@@ -35,13 +35,11 @@ t_stack	*get_last_node(t_stack *stack_a)
 	return (last);
 }
 
-int	argv_double(t_stack *stack_a)
+int	check_doubles(t_stack *stack_a)
 {
 	t_stack	*i;
 	t_stack	*j;
-	int		len;
-	
-	len = ft_list_size(stack_a);
+
 	i = stack_a;
     while (i != NULL)
     {
@@ -83,8 +81,41 @@ int	ft_atoi(char *str)
 	return (nb * sign);
 }
 
+void print_stack(t_stack *stack_a) 
+{
+    while (stack_a != NULL) 
+    {
+        ft_printf("%d ", stack_a->nbr);
+        stack_a = stack_a->next;
+    }
+    ft_printf("\n");
+}
+
+int	in_order(t_stack **stack_a)
+{
+	t_stack	*i;
+	t_stack	*j;
+
+	if (stack_a == NULL)
+		return (0);
+	i = *stack_a;
+	while (i)
+	{
+		j = i->next;
+		while (j)
+		{
+			if (i->nbr > j->nbr)
+				return (0);
+			j = j->next;
+		}
+		i = i->next;
+	}
+	return (1);
+}
+
+
 // int main() {
-//
+
 //     t_stack* stack_a = malloc(sizeof(t_stack));
 //     stack_a->nbr = 1;
 
@@ -99,7 +130,7 @@ int	ft_atoi(char *str)
 
 //     stack_a->next->next->next->next = NULL;
 
-//     if (argv_double(stack_a)) {
+//     if (check_doubles(stack_a)) {
 //         printf("Aucun doublon trouvé dans la liste chaînée.\n");
 //     } else {
 //         printf("Des doublons ont été trouvés dans la liste chaînée.\n");

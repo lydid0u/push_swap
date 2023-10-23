@@ -113,6 +113,23 @@ int	in_order(t_stack **stack_a)
 	return (1);
 }
 
+int	correct_int(const char *str, int c)
+{
+	int	i;
+
+	i = 0;
+	if (str[i] == '-' || str[i] == '+')
+		i++;
+	while (str[i])
+	{
+		if (c >= '0' && c <= '9')
+       		return (1);
+   		else
+        	return (0);
+		i++;
+	}
+	return (1);
+}
 
 // int main() {
 

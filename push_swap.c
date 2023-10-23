@@ -20,19 +20,15 @@ int	main(int argc, char **argv)
 
 	stack_a = NULL;
 	stack_b = NULL;
-	(void)argv;
-	check_doubles(stack_a);
-	
+	(void)stack_b;
+	if (check_doubles(stack_a) == 0)
 	if (argc < 2)
 		return (ft_printf("Error\n"), 0);
 	if (argc == 2)
-		return 1;
-		// split;
-	if (argc > 2)
+		in_quote(&stack_a, &argv[1]);
+	if (argc < 2)
 	{
-		//create_list();
-		if (check_doubles(stack_a) == 0)
-			return(0);
+		nbr_listed(&stack_a, argc, argv);
 	}
 	return (1);	
 } 

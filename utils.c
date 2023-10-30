@@ -47,10 +47,7 @@ int	check_doubles(t_stack *stack_a)
         while (j != NULL)
         {
             if (i->nbr == j->nbr)
-            {
-                ft_printf("Error\nDuplicate number\n");
-                return 0;
-            }
+                return (0);
             j = j->next;
         }
         i = i->next;
@@ -113,22 +110,35 @@ int	in_order(t_stack **stack_a)
 	return (1);
 }
 
-int	correct_int(const char *str, int c)
+int	int_is_correct(const char *str)
 {
 	int	i;
 
 	i = 0;
-	if (str[i] == '-' || str[i] == '+')
-		i++;
 	while (str[i])
 	{
-		if (c >= '0' && c <= '9')
-       		return (1);
-   		else
-        	return (0);
+		if (!(str[i] >= '0' && str[i] <= '9') && str[i] != '-')
+			return (0);
 		i++;
+		if (str[i] == '-')
+			return (0);
 	}
 	return (1);
+}
+
+int	find_index(t_stack *stack, int nbr)
+{
+	int	i;
+
+	i = 0;
+	if (stack == NULL)
+		return (0);
+	while (stack->nbr != nbr)
+	{
+		stack = stack->next;
+		i++;
+	}
+	return (i);
 }
 
 // int main() {
@@ -161,4 +171,3 @@ int	correct_int(const char *str, int c)
 //     }
 //     return 0;
 // }
-

@@ -12,7 +12,7 @@
 
 #include "pushswap.h"
 
-int	correct_int(char *str)
+int	int_is_correct(char *str)
 {
 	int	i;
 

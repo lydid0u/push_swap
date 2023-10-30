@@ -36,7 +36,7 @@ int		ft_atoi(const char *str);
 t_stack	*get_last_node(t_stack *pile_a);
 int		stack_amount_nodes(t_stack *pile_a);
 void	free_tab(char **av1);
-int		correct_int(char *str);
+int		int_is_correct(char *str);
 void	free_pile(t_stack *pile_a);
 int		doublon(t_stack *pile_a);
 

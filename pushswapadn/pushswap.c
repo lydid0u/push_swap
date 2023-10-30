@@ -23,7 +23,7 @@ int	one_argument(t_stack **pile_a, char *arg)
 		return (free_tab(av1), 0);
 	while (av1[i])
 	{
-		if (correct_int(av1[i]) == 0)
+		if (int_is_correct(av1[i]) == 0)
 			return (free_tab(av1), ft_printf("Error\n"), 0);
 		create_node(pile_a, av1[i]);
 		i++;
@@ -40,7 +40,7 @@ int	multiple_arg(t_stack **pile_a, int argc, char **arg)
 	i = 1;
 	while (i < argc)
 	{
-		if (correct_int(arg[i]) == 0)
+		if (int_is_correct(arg[i]) == 0)
 			return (free_pile(*pile_a), ft_printf("Error\n"), 0);
 		create_node(pile_a, arg[i]);
 		if (!pile_a)

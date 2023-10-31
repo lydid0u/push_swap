@@ -6,15 +6,16 @@
 /*   By: lboudjel <lboudjel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/11 19:16:52 by lboudjel          #+#    #+#             */
-/*   Updated: 2023/10/20 14:22:36 by lboudjel         ###   ########.fr       */
+/*   Updated: 2023/10/31 16:31:38 by lboudjel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-// en gros on utilise un double ptr pour modifier la pile et pas juste les donnes de la pile,
+// en gros on utilise un double ptr pour modifier la pile 
+//et pas juste les donnes de la pile,
 // un seul ptr va modifier la copie de la pile
-// alors que double pointeur va modifier l'adresse memoire de la pile elle meme
+// alors que double pointeur va modifier l'adresse memoire de la pile elle mm
 
 void	swap_a(t_stack **stack_a)
 {

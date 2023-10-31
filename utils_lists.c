@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   utils_lists.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: lboudjel <lboudjel@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/10/31 16:31:09 by lboudjel          #+#    #+#             */
+/*   Updated: 2023/10/31 17:34:17 by lboudjel         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 int	ft_list_size(t_stack *stack_a)
@@ -23,14 +35,14 @@ t_stack	*get_last_node(t_stack *stack_a)
 	return (last);
 }
 
-void print_stack(t_stack *stack_a) 
+void	print_stack(t_stack *stack_a)
 {
-    while (stack_a != NULL) 
-    {
-        ft_printf("%d ", stack_a->nbr);
-        stack_a = stack_a->next;
-    }
-    ft_printf("\n");
+	while (stack_a != NULL)
+	{
+		ft_printf("%d ", stack_a->nbr);
+		stack_a = stack_a->next;
+	}
+	ft_printf("\n");
 }
 
 int	in_order(t_stack **stack_a)

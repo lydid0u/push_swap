@@ -6,7 +6,7 @@
 /*   By: lboudjel <lboudjel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/11 19:16:44 by lboudjel          #+#    #+#             */
-/*   Updated: 2023/10/20 14:36:23 by lboudjel         ###   ########.fr       */
+/*   Updated: 2023/10/31 16:32:12 by lboudjel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,10 +46,10 @@ void	rotate_b(t_stack **stack_b)
 
 void	rr(t_stack **stack_a, t_stack **stack_b)
 {
-	t_stack *last_a;
-	t_stack *temp_a;
-	t_stack *last_b;
-	t_stack *temp_b;
+	t_stack	*last_a;
+	t_stack	*temp_a;
+	t_stack	*last_b;
+	t_stack	*temp_b;
 
 	if (*stack_a && (*stack_a)->next)
 	{

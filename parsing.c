@@ -6,13 +6,13 @@
 /*   By: lboudjel <lboudjel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 17:49:22 by lboudjel          #+#    #+#             */
-/*   Updated: 2023/10/20 18:22:03 by lboudjel         ###   ########.fr       */
+/*   Updated: 2023/10/31 17:32:57 by lboudjel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_stack		*create_node(t_stack **stack_a, char *argv)
+t_stack	*create_node(t_stack **stack_a, char *argv)
 {
 	t_stack		*node;
 	t_stack		*last;
@@ -21,11 +21,11 @@ t_stack		*create_node(t_stack **stack_a, char *argv)
 	nbr = ft_atoi(argv);
 	node = ft_lstnew(&nbr);
 	if (node == NULL)
-		return NULL;
+		return (NULL);
 	if (*stack_a == NULL)
 	{
 		*stack_a = node;
-		return NULL;
+		return (NULL);
 	}
 	last = get_last_node(*stack_a);
 	last->next = node;
@@ -86,16 +86,16 @@ int	check_doubles(t_stack *stack_a)
 	t_stack	*j;
 
 	i = stack_a;
-    while (i != NULL)
-    {
-        j = i->next;
-        while (j != NULL)
-        {
-            if (i->nbr == j->nbr)
-                return (0);
-            j = j->next;
-        }
-        i = i->next;
-    }
+	while (i != NULL)
+	{
+		j = i->next;
+		while (j != NULL)
+		{
+			if (i->nbr == j->nbr)
+				return (0);
+			j = j->next;
+		}
+		i = i->next;
+	}
 	return (1);
 }

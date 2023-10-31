@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   push_swap.h                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: lboudjel <lboudjel@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/10/31 17:34:09 by lboudjel          #+#    #+#             */
+/*   Updated: 2023/10/31 17:59:39 by lboudjel         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
@@ -10,6 +22,8 @@ typedef struct s_stack
 {
 	int				nbr;
 	int				index;
+	int				target;
+	int				cost;
 	struct s_stack	*next;
 }					t_stack;
 
@@ -49,14 +63,24 @@ int					check_doubles(t_stack *stack_a);
 //sort 3 and 5
 t_stack				**sort_three(t_stack **stack_a);
 t_stack				**sort_five(t_stack **stack_a, t_stack **stack_b);
-t_stack             **sort_four(t_stack **stack_a, t_stack **stack_b);
+t_stack				**sort_four(t_stack **stack_a, t_stack **stack_b);
 int					find_smol(t_stack **stack);
 t_stack				*mv_smol_up(t_stack *stack);
+
+//sort_rest
+t_stack				**big_sort(t_stack **stack_a, t_stack **stack_b);
+
+//set_up_algo
+
+void				target_finder(t_stack *stack_a, t_stack *stack_b);
+void				assigning_target(t_stack *stack_a, t_stack *stack_b);
+void				cost_of_movement(t_stack *stack_a, t_stack *stack_b);
 
 //ft_split
 int					countword(const char *s, char c);
 char				*copystr(const char *original, char c);
-char				**ft_fill_tab(char const *s, char c, char **tab, int len_tab);
+char				**ft_fill_tab(char const *s, char c, char **tab,
+						int len_tab);
 char				**ft_split(char const *s, char c);
 
 //free

@@ -11,7 +11,7 @@ PRINTF		= ft_printf
 FT_PRINTF	= ft_printf/libftprintf.a
 
 SRC	 = ./command/push.c ./command/swap.c ./command/rotate.c ./command/reverse_rotate.c parsing.c ft_split.c \
- 		free.c push_swap.c utils.c sort_3_4_5.c sort_rest.c utils_lists.c \
+ 		free.c push_swap.c utils.c sort_3_4_5.c sort_rest.c utils_lists.c set_up_algo.c \
 
 OBJ	= ${SRC:.c=.o}
 

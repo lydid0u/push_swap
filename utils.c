@@ -6,60 +6,17 @@
 /*   By: lboudjel <lboudjel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/11 19:35:48 by lboudjel          #+#    #+#             */
-/*   Updated: 2023/10/20 17:46:15 by lboudjel         ###   ########.fr       */
+/*   Updated: 2023/10/31 17:32:49 by lboudjel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	ft_list_size(t_stack *stack_a)
-{
-	int	i;
-
-	i = 0;
-	while (stack_a)
-	{
-		stack_a = stack_a->next;
-		i++;
-	}
-	return (i);
-}
-
-t_stack	*get_last_node(t_stack *stack_a)
-{
-	t_stack	*last;
-
-	last = stack_a;
-	while (last->next)
-		last = last->next;
-	return (last);
-}
-
-int	check_doubles(t_stack *stack_a)
-{
-	t_stack	*i;
-	t_stack	*j;
-
-	i = stack_a;
-    while (i != NULL)
-    {
-        j = i->next;
-        while (j != NULL)
-        {
-            if (i->nbr == j->nbr)
-                return (0);
-            j = j->next;
-        }
-        i = i->next;
-    }
-	return (1);
-}
-
 int	ft_atoi(char *str)
 {
-	int i;
-	int sign;
-	int nb;
+	int	i;
+	int	sign;
+	int	nb;
 
 	i = 0;
 	sign = 1;
@@ -76,38 +33,6 @@ int	ft_atoi(char *str)
 		i++;
 	}
 	return (nb * sign);
-}
-
-void print_stack(t_stack *stack_a) 
-{
-    while (stack_a != NULL) 
-    {
-        ft_printf("%d ", stack_a->nbr);
-        stack_a = stack_a->next;
-    }
-    ft_printf("\n");
-}
-
-int	in_order(t_stack **stack_a)
-{
-	t_stack	*i;
-	t_stack	*j;
-
-	if (stack_a == NULL)
-		return (0);
-	i = *stack_a;
-	while (i)
-	{
-		j = i->next;
-		while (j)
-		{
-			if (i->nbr > j->nbr)
-				return (0);
-			j = j->next;
-		}
-		i = i->next;
-	}
-	return (1);
 }
 
 int	int_is_correct(const char *str)
@@ -153,7 +78,7 @@ int	find_index(t_stack *stack, int nbr)
 //     stack_a->next->next->nbr = 3;
 
 //     stack_a->next->next->next = malloc(sizeof(t_stack));
-//     stack_a->next->next->next->nbr = 4; 
+//     stack_a->next->next->next->nbr = 4;
 
 //     stack_a->next->next->next->next = NULL;
 
@@ -169,5 +94,5 @@ int	find_index(t_stack *stack, int nbr)
 //         current = current->next;
 //         free(temp);
 //     }
-//     return 0;
+//     return (0);
 // }

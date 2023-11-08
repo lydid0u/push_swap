@@ -6,17 +6,31 @@
 /*   By: lboudjel <lboudjel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 14:25:07 by lboudjel          #+#    #+#             */
-/*   Updated: 2023/10/31 18:12:14 by lboudjel         ###   ########.fr       */
+/*   Updated: 2023/11/06 18:08:59 by lboudjel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
+void	printf_lst_target(t_stack *pile_a)
+{
+	t_stack	*tmp;
+
+	tmp = pile_a;
+	printf("liste target : \n");
+	while (tmp)
+	{
+		ft_printf("%d\n", tmp->target);
+		tmp = tmp->next;
+	}
+	printf("\n\n\n\n");
+}
+
 int	algorithm(t_stack **stack_a, t_stack **stack_b)
 {
 	int	list;
+	int	cheapest;
 
-	(void)stack_b;
 	if (!stack_a || !(*stack_a) || !(*stack_a)->next)
 		return (0);
 	list = ft_list_size(*stack_a);
@@ -38,8 +52,26 @@ int	algorithm(t_stack **stack_a, t_stack **stack_b)
 		print_stack(*stack_a);
 		print_stack(*stack_b);
 	}
-	// else
-	// 	big_sort(stack_a, stack_b);
+	else
+	{
+		if (ft_list_size(*stack_b) == 3 && in_order(stack_b) == 0)
+			sort_three(stack_b);
+		print_stack(*stack_a);
+		print_stack(*stack_b);
+		index_definer_second_half(*stack_a);
+		index_definer_second_half(*stack_b);
+		print_index(*stack_a);
+		print_index(*stack_b);
+		target_finder(*stack_a, *stack_b);
+		printf_lst_target(*stack_a);
+		cost_finder(*stack_a, *stack_b);
+		cheapest = position_of_the_cheapest_cost(*stack_a);
+		ft_printf("%d\n", cheapest);
+		sorting(stack_a, stack_b);
+		print_stack(*stack_a);
+		print_stack(*stack_b);
+		// algorithm(stack_a, stack_b);
+	}
 	return (1);
 }
 
@@ -58,6 +90,9 @@ int	main(int argc, char **argv)
 		in_quote(&stack_a, argv[1]);
 		if (check_doubles(stack_a) == 0 || ft_list_size(stack_a) == 1)
 			return (free_node(stack_a), ft_printf("Error2\n"), 0);
+		push_b(&stack_a, &stack_b);
+		push_b(&stack_a, &stack_b);
+		push_b(&stack_a, &stack_b);
 	}
 	else if (argc > 2)
 	{
@@ -65,6 +100,9 @@ int	main(int argc, char **argv)
 			return (0);
 		if (check_doubles(stack_a) == 0 || ft_list_size(stack_a) == 1)
 			return (free_node(stack_a), ft_printf("Error4\n"), 0);
+		push_b(&stack_a, &stack_b);
+		push_b(&stack_a, &stack_b);
+		push_b(&stack_a, &stack_b);
 	}
 	algorithm(&stack_a, &stack_b);
 	return (1);

@@ -6,7 +6,7 @@
 /*   By: lboudjel <lboudjel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 17:34:09 by lboudjel          #+#    #+#             */
-/*   Updated: 2023/10/31 17:59:39 by lboudjel         ###   ########.fr       */
+/*   Updated: 2023/11/06 18:08:32 by lboudjel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define PUSH_SWAP_H
 
 # include "./ft_printf/ft_printf.h"
+# include <limits.h>
 # include <stdio.h>
 # include <stdlib.h>
 # include <unistd.h>
@@ -41,7 +42,6 @@ void				r_rotate_b(t_stack **stack_b);
 void				rrr(t_stack **stack_a, t_stack **stack_b);
 
 //utils_lists
-int					get_index(t_stack *stack);
 t_stack				*get_last_node(t_stack *stack);
 int					ft_list_size(t_stack *stack_a);
 void				print_stack(t_stack *stack_a);
@@ -50,9 +50,10 @@ int					in_order(t_stack **stack_a);
 //utils
 int					ft_atoi(char *str);
 int					int_is_correct(const char *str);
-int					find_index(t_stack *stack, int nbr);
+int					find_position(t_stack *stack, int nbr);
 int					algorithm(t_stack **stack_a, t_stack **stack_b);
 
+void				print_index(t_stack *stack_a);
 //parsing
 t_stack				*create_node(t_stack **stack_a, char *argv);
 t_stack				*ft_lstnew(void *nbr);
@@ -68,13 +69,22 @@ int					find_smol(t_stack **stack);
 t_stack				*mv_smol_up(t_stack *stack);
 
 //sort_rest
-t_stack				**big_sort(t_stack **stack_a, t_stack **stack_b);
+void				big_sort(t_stack **stack_a, t_stack **stack_b);
+void	cost_finder(t_stack *stack_a,
+					t_stack *stack_b);
 
 //set_up_algo
-
-void				target_finder(t_stack *stack_a, t_stack *stack_b);
 void				assigning_target(t_stack *stack_a, t_stack *stack_b);
 void				cost_of_movement(t_stack *stack_a, t_stack *stack_b);
+void				index_definer_first_half(t_stack *stack);
+void				index_definer_second_half(t_stack *stack);
+int					find_smallest_element(t_stack **stack);
+int					find_biggest_element(t_stack **stack);
+void				target_finder(t_stack *stack_a, t_stack *stack_b);
+int					iteration_in_stack(t_stack *stack_a, t_stack *stack_b);
+void	check_how_big_is_the_number(t_stack *stack_a,
+									t_stack *stack_b,
+									int contenue_de_a);
 
 //ft_split
 int					countword(const char *s, char c);
@@ -86,5 +96,9 @@ char				**ft_split(char const *s, char c);
 //free
 void				free_node(t_stack *stack_a);
 void				free_tab(char **argv);
+
+void				printf_lst_target(t_stack *pile_a);
+int					position_of_the_cheapest_cost(t_stack *stack_a);
+void				sorting(t_stack **stack_a, t_stack **stack_b);
 
 #endif

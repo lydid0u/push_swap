@@ -6,7 +6,7 @@
 /*   By: lboudjel <lboudjel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/11 19:35:48 by lboudjel          #+#    #+#             */
-/*   Updated: 2023/10/31 17:32:49 by lboudjel         ###   ########.fr       */
+/*   Updated: 2023/11/06 14:35:36 by lboudjel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ int	int_is_correct(const char *str)
 	return (1);
 }
 
-int	find_index(t_stack *stack, int nbr)
+int	find_position(t_stack *stack, int nbr)
 {
 	int	i;
 

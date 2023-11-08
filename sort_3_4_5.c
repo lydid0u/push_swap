@@ -6,7 +6,7 @@
 /*   By: lboudjel <lboudjel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 16:31:03 by lboudjel          #+#    #+#             */
-/*   Updated: 2023/10/31 18:13:00 by lboudjel         ###   ########.fr       */
+/*   Updated: 2023/11/02 15:10:44 by lboudjel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,7 +91,7 @@ t_stack	*mv_smol_up(t_stack *stack)
 	int	smollest_id;
 	int	size;
 
-	smollest_id = find_index(stack, find_smol(&stack));
+	smollest_id = find_position(stack, find_smol(&stack));
 	size = ft_list_size(stack);
 	if (smollest_id <= size / 2)
 		while (stack->nbr != find_smol(&stack))

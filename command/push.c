@@ -6,7 +6,7 @@
 /*   By: lboudjel <lboudjel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/11 19:10:26 by lboudjel          #+#    #+#             */
-/*   Updated: 2023/10/31 18:05:35 by lboudjel         ###   ########.fr       */
+/*   Updated: 2023/11/02 16:15:17 by lboudjel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@
 void	push_a(t_stack **stack_a, t_stack **stack_b)
 {
 	t_stack	*temp;
-	
+
 	if (*stack_b)
 	{
 		temp = *stack_b;

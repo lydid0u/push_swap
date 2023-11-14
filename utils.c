@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lboudjel <lboudjel@student.42.fr>          +#+  +:+       +#+        */
+/*   By: adzinabi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/11 19:35:48 by lboudjel          #+#    #+#             */
-/*   Updated: 2023/11/06 14:35:36 by lboudjel         ###   ########.fr       */
+/*   Updated: 2023/11/09 12:01:51 by adzinabi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,10 +60,17 @@ int	find_position(t_stack *stack, int nbr)
 		return (0);
 	while (stack->nbr != nbr)
 	{
-		stack = stack->next;
 		i++;
+		stack = stack->next;
 	}
 	return (i);
+}
+
+t_stack	find_position_stack(t_stack *stack, int nbr)
+{
+	while (stack->nbr != nbr)
+		stack = stack->next;
+	return (*stack);
 }
 
 // int main() {

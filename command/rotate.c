@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   rotate.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lboudjel <lboudjel@student.42.fr>          +#+  +:+       +#+        */
+/*   By: adzinabi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/11 19:16:44 by lboudjel          #+#    #+#             */
-/*   Updated: 2023/10/31 16:32:12 by lboudjel         ###   ########.fr       */
+/*   Updated: 2023/11/13 16:28:08 by adzinabi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,15 +15,15 @@
 void	rotate_a(t_stack **stack_a)
 {
 	t_stack	*last;
-	t_stack	*temp;
+	t_stack	*tmp;
 
 	if (*stack_a && (*stack_a)->next)
 	{
-		temp = *stack_a;
+		tmp = *stack_a;
 		last = get_last_node(*stack_a);
-		last->next = temp;
-		*stack_a = temp->next;
-		temp->next = NULL;
+		last->next = tmp;
+		*stack_a = tmp->next;
+		tmp->next = NULL;
 		ft_printf("ra\n");
 	}
 }
@@ -31,16 +31,16 @@ void	rotate_a(t_stack **stack_a)
 void	rotate_b(t_stack **stack_b)
 {
 	t_stack	*last;
-	t_stack	*temp;
+	t_stack	*tmp;
 
 	if (*stack_b && (*stack_b)->next)
 	{
-		temp = *stack_b;
+		tmp = *stack_b;
 		last = get_last_node(*stack_b);
-		last->next = temp;
-		*stack_b = temp->next;
-		temp->next = NULL;
-		ft_printf("ra\n");
+		last->next = tmp;
+		*stack_b = tmp->next;
+		tmp->next = NULL;
+		ft_printf("rb\n");
 	}
 }
 

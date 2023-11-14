@@ -3,17 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   swap.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lboudjel <lboudjel@student.42.fr>          +#+  +:+       +#+        */
+/*   By: adzinabi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/11 19:16:52 by lboudjel          #+#    #+#             */
-/*   Updated: 2023/11/02 16:36:20 by lboudjel         ###   ########.fr       */
+/*   Updated: 2023/11/11 16:53:20 by adzinabi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
 // en gros on utilise un double ptr pour modifier la stack 
-//et pas juste les donnes de la stack,
+// et pas juste les donnes de la stack,
 // un seul ptr va modifier la copie de la stack
 // alors que double pointeur va modifier l'adresse memoire de la stack elle mm
 

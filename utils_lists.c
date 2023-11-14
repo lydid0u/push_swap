@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils_lists.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lboudjel <lboudjel@student.42.fr>          +#+  +:+       +#+        */
+/*   By: adzinabi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 16:31:09 by lboudjel          #+#    #+#             */
-/*   Updated: 2023/11/06 15:57:30 by lboudjel         ###   ########.fr       */
+/*   Updated: 2023/11/13 17:03:03 by adzinabi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,18 @@ int	ft_list_size(t_stack *stack_a)
 	}
 	return (i);
 }
+void	ft_vrai_index(t_stack *stack)
+{
+	int	i;
+
+	i = 0;
+	while (stack)
+	{
+		stack->vrai_index = i;
+		stack = stack->next;
+		i++;
+	}
+}
 
 t_stack	*get_last_node(t_stack *stack_a)
 {
@@ -35,12 +47,12 @@ t_stack	*get_last_node(t_stack *stack_a)
 	return (last);
 }
 
-void	print_stack(t_stack *stack_a)
+void	print_stack(t_stack *stack)
 {
-	while (stack_a != NULL)
+	while (stack != NULL)
 	{
-		ft_printf("%d ", stack_a->nbr);
-		stack_a = stack_a->next;
+		ft_printf("%d ", stack->nbr);
+		stack = stack->next;
 	}
 	ft_printf("\n\n");
 }
@@ -76,4 +88,17 @@ int	in_order(t_stack **stack_a)
 		i = i->next;
 	}
 	return (1);
+}
+
+void	where_am_i(t_stack *stack_a)
+{
+	int	i;
+
+	i = 0;
+	while (stack_a)
+	{
+		stack_a->position = i;
+		stack_a = stack_a->next;
+		i++;
+	}
 }

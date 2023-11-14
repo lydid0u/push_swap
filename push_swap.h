@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lboudjel <lboudjel@student.42.fr>          +#+  +:+       +#+        */
+/*   By: adzinabi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 17:34:09 by lboudjel          #+#    #+#             */
-/*   Updated: 2023/11/06 18:08:32 by lboudjel         ###   ########.fr       */
+/*   Updated: 2023/11/13 17:03:11 by adzinabi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,11 @@ typedef struct s_stack
 {
 	int				nbr;
 	int				index;
+	int				vrai_index;
 	int				target;
 	int				cost;
+	int				position;
+	int				scenario;
 	struct s_stack	*next;
 }					t_stack;
 
@@ -44,7 +47,7 @@ void				rrr(t_stack **stack_a, t_stack **stack_b);
 //utils_lists
 t_stack				*get_last_node(t_stack *stack);
 int					ft_list_size(t_stack *stack_a);
-void				print_stack(t_stack *stack_a);
+void				print_stack(t_stack *stack);
 int					in_order(t_stack **stack_a);
 
 //utils
@@ -54,6 +57,8 @@ int					find_position(t_stack *stack, int nbr);
 int					algorithm(t_stack **stack_a, t_stack **stack_b);
 
 void				print_index(t_stack *stack_a);
+void				ft_vrai_index(t_stack *stack);
+
 //parsing
 t_stack				*create_node(t_stack **stack_a, char *argv);
 t_stack				*ft_lstnew(void *nbr);
@@ -70,8 +75,8 @@ t_stack				*mv_smol_up(t_stack *stack);
 
 //sort_rest
 void				big_sort(t_stack **stack_a, t_stack **stack_b);
-void	cost_finder(t_stack *stack_a,
-					t_stack *stack_b);
+void				cost_finder(t_stack *stack_a,
+						t_stack *stack_b);
 
 //set_up_algo
 void				assigning_target(t_stack *stack_a, t_stack *stack_b);
@@ -81,10 +86,10 @@ void				index_definer_second_half(t_stack *stack);
 int					find_smallest_element(t_stack **stack);
 int					find_biggest_element(t_stack **stack);
 void				target_finder(t_stack *stack_a, t_stack *stack_b);
+void				where_am_i(t_stack *stack_a);
 int					iteration_in_stack(t_stack *stack_a, t_stack *stack_b);
-void	check_how_big_is_the_number(t_stack *stack_a,
-									t_stack *stack_b,
-									int contenue_de_a);
+void				check_how_big_is_the_number(t_stack *stack_a,
+						t_stack *stack_b, int contenue_de_a);
 
 //ft_split
 int					countword(const char *s, char c);
@@ -99,6 +104,13 @@ void				free_tab(char **argv);
 
 void				printf_lst_target(t_stack *pile_a);
 int					position_of_the_cheapest_cost(t_stack *stack_a);
-void				sorting(t_stack **stack_a, t_stack **stack_b);
+void				targeted_and_targeting_at_the_top(t_stack *stack_a,
+						t_stack *stack_b);
+t_stack				find_position_stack(t_stack *stack, int nbr);
+void				choice_of_scenario(t_stack **stack_a, t_stack **stack_b);
+void				what_is_the_scenario(t_stack *stack_a, t_stack *stack_b);
+void		changer_de_stack_pour_push(t_stack **stack_a, t_stack **stack_b, int position);
+void	push_the_cheapest_at_the_top(t_stack **stack_a, t_stack **stack_b, int position);
+void	redefine_everything(t_stack **stack_a, t_stack **stack_b);
 
 #endif

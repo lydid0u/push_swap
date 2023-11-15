@@ -6,7 +6,7 @@
 /*   By: lboudjel <lboudjel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 16:31:06 by lboudjel          #+#    #+#             */
-/*   Updated: 2023/11/15 18:36:44 by lboudjel         ###   ########.fr       */
+/*   Updated: 2023/11/15 18:57:11 by lboudjel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -138,10 +138,7 @@ void	put_min_top(t_stack **stack)
 void	help2(t_stack **stack_a, t_stack **stack_b, int cheap_a)
 {
 	if (cheap_a > 0)
-	{
 		rrr(stack_a, stack_b);
-		ft_printf("rrr\n");
-	}
 	else
 		r_rotate_a(stack_a);
 }

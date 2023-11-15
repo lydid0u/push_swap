@@ -6,7 +6,7 @@
 /*   By: lboudjel <lboudjel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 14:25:07 by lboudjel          #+#    #+#             */
-/*   Updated: 2023/11/15 18:36:17 by lboudjel         ###   ########.fr       */
+/*   Updated: 2023/11/15 18:57:33 by lboudjel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ int	algorithm(t_stack **stack_a, t_stack **stack_b)
 		push_to_pile_b(stack_a, stack_b);
 		sorting(stack_a, stack_b);
 		put_min_top(stack_a);
-		print_stack(*stack_a);
+		// print_stack(*stack_a);
 	}
 	return (1);
 }

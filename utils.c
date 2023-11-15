@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adzinabi <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: lboudjel <lboudjel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/11 19:35:48 by lboudjel          #+#    #+#             */
-/*   Updated: 2023/11/09 12:01:51 by adzinabi         ###   ########.fr       */
+/*   Updated: 2023/11/15 17:45:43 by lboudjel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,53 +53,17 @@ int	int_is_correct(const char *str)
 
 int	find_position(t_stack *stack, int nbr)
 {
+	t_stack *current;
 	int	i;
 
 	i = 0;
-	if (stack == NULL)
+	current = stack;
+	if (current == NULL)
 		return (0);
-	while (stack->nbr != nbr)
+	while (current->nbr != nbr)
 	{
 		i++;
-		stack = stack->next;
+		current = current->next;
 	}
 	return (i);
 }
-
-t_stack	find_position_stack(t_stack *stack, int nbr)
-{
-	while (stack->nbr != nbr)
-		stack = stack->next;
-	return (*stack);
-}
-
-// int main() {
-
-//     t_stack* stack_a = malloc(sizeof(t_stack));
-//     stack_a->nbr = 1;
-
-//     stack_a->next = malloc(sizeof(t_stack));
-//     stack_a->next->nbr = 2;
-
-//     stack_a->next->next = malloc(sizeof(t_stack));
-//     stack_a->next->next->nbr = 3;
-
-//     stack_a->next->next->next = malloc(sizeof(t_stack));
-//     stack_a->next->next->next->nbr = 4;
-
-//     stack_a->next->next->next->next = NULL;
-
-//     if (check_doubles(stack_a)) {
-//         printf("Aucun doublon trouvé dans la liste chaînée.\n");
-//     } else {
-//         printf("Des doublons ont été trouvés dans la liste chaînée.\n");
-//     }
-
-//     t_stack* current = stack_a;
-//     while (current != NULL) {
-//         t_stack* temp = current;
-//         current = current->next;
-//         free(temp);
-//     }
-//     return (0);
-// }

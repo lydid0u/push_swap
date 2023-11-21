@@ -6,7 +6,7 @@
 /*   By: lboudjel <lboudjel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/11 19:35:48 by lboudjel          #+#    #+#             */
-/*   Updated: 2023/11/15 17:45:43 by lboudjel         ###   ########.fr       */
+/*   Updated: 2023/11/21 12:34:54 by lboudjel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,8 +53,8 @@ int	int_is_correct(const char *str)
 
 int	find_position(t_stack *stack, int nbr)
 {
-	t_stack *current;
-	int	i;
+	t_stack	*current;
+	int		i;
 
 	i = 0;
 	current = stack;

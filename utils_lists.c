@@ -6,7 +6,7 @@
 /*   By: lboudjel <lboudjel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 16:31:09 by lboudjel          #+#    #+#             */
-/*   Updated: 2023/11/20 15:19:38 by lboudjel         ###   ########.fr       */
+/*   Updated: 2023/11/21 12:34:32 by lboudjel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ void	print_stack(t_stack *stack)
 		ft_printf("%d ", stack->nbr);
 		stack = stack->next;
 	}
-	// ft_printf("\n\n");
+	ft_printf("\n\n");
 }
 
 int	in_order(t_stack **stack_a)

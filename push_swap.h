@@ -6,7 +6,7 @@
 /*   By: lboudjel <lboudjel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 17:34:09 by lboudjel          #+#    #+#             */
-/*   Updated: 2023/11/20 15:20:36 by lboudjel         ###   ########.fr       */
+/*   Updated: 2023/11/21 12:37:07 by lboudjel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,11 +22,7 @@
 typedef struct s_stack
 {
 	int				nbr;
-	// int				index;
-	// int				target;
 	int				cost;
-	// int				position;
-	// int				scenario;
 	struct s_stack	*next;
 }					t_stack;
 
@@ -95,14 +91,14 @@ int					position_of_the_cheapest_cost(t_stack *stack_a);
 void				choice_of_scenario(t_stack **stack_a, t_stack **stack_b);
 void				what_is_the_scenario(t_stack *stack_a, t_stack *stack_b);
 void				redefine_everything(t_stack **stack_a, t_stack **stack_b);
-int				cost_definer(int sizelist, int position);
-int	total_cost(int price_a, int price_b);
+int					cost_definer(int sizelist, int position);
+int					total_cost(int price_a, int price_b);
 void				finding_the_one_to_move(t_stack **stack_a,
-								t_stack **stack_b, int *tab);
+						t_stack **stack_b, int *tab);
 void				allez_ca_part(t_stack **stack_a, t_stack **stack_b,
 						int cheap_a, int cheap_b);
-void	sorting(t_stack **stack_a, t_stack **stack_b);
-void	push_to_pile_b(t_stack **stack_a, t_stack **stack_b);
-void	put_min_top(t_stack **stack);
+void				sorting(t_stack **stack_a, t_stack **stack_b);
+void				push_to_pile_b(t_stack **stack_a, t_stack **stack_b);
+void				put_min_top(t_stack **stack);
 
 #endif

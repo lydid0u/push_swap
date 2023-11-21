@@ -6,7 +6,7 @@
 /*   By: lboudjel <lboudjel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 17:34:09 by lboudjel          #+#    #+#             */
-/*   Updated: 2023/11/15 18:35:39 by lboudjel         ###   ########.fr       */
+/*   Updated: 2023/11/20 15:20:36 by lboudjel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,6 @@ t_stack				*mv_smol_up(t_stack *stack);
 //set_up_algo
 void				index_definer_first_half(t_stack *stack);
 void				index_definer_second_half(t_stack *stack);
-int					find_smallest_element(t_stack **stack);
 int					find_biggest_element(t_stack **stack);
 void				target_finder(t_stack *stack_a, t_stack *stack_b);
 void				where_am_i(t_stack *stack_a);

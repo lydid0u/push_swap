@@ -6,7 +6,7 @@
 /*   By: lboudjel <lboudjel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 14:25:07 by lboudjel          #+#    #+#             */
-/*   Updated: 2023/11/15 18:57:33 by lboudjel         ###   ########.fr       */
+/*   Updated: 2023/11/20 17:23:19 by lboudjel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,7 @@ int	main(int argc, char **argv)
 	stack_a = NULL;
 	stack_b = NULL;
 	(void)stack_b;
+	(void)argv;
 	if (argc < 2)
 		return (ft_printf("Error1\n"), 0);
 	else if (argc == 2)
@@ -63,5 +64,6 @@ int	main(int argc, char **argv)
 			return (free_node(stack_a), ft_printf("Error4\n"), 0);
 	}
 	algorithm(&stack_a, &stack_b);
+	free_node(stack_a);
 	return (1);
 }

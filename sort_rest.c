@@ -6,7 +6,7 @@
 /*   By: lboudjel <lboudjel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 16:31:06 by lboudjel          #+#    #+#             */
-/*   Updated: 2023/11/15 18:57:11 by lboudjel         ###   ########.fr       */
+/*   Updated: 2023/11/20 17:28:20 by lboudjel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,8 +94,8 @@ int	second_price(t_stack *stack, int content)
 
 void	sorting(t_stack **stack_a, t_stack **stack_b)
 {
-	int		sizelist;
-	int		cheapest[2];
+	int	sizelist;
+	int	cheapest[2];
 
 	sizelist = ft_stack_size(*stack_b);
 	while (sizelist > 0)
@@ -108,12 +108,12 @@ void	sorting(t_stack **stack_a, t_stack **stack_b)
 
 void	push_to_pile_b(t_stack **stack_a, t_stack **stack_b)
 {
-	t_stack *current;
+	t_stack	*current;
 	int		size;
 
 	current = *stack_a;
 	size = ft_stack_size(*stack_a);
-	while(size > 3)
+	while (size > 3)
 	{
 		push_b(stack_a, stack_b);
 		size--;
@@ -151,7 +151,8 @@ void	help3(t_stack **stack_a, t_stack **stack_b, int cheap_a)
 		rotate_a(stack_a);
 }
 
-void	allez_ca_part(t_stack **stack_a, t_stack **stack_b, int cheap_a, int cheap_b)
+void	allez_ca_part(t_stack **stack_a, t_stack **stack_b, int cheap_a,
+		int cheap_b)
 {
 	while (cheap_b > 0)
 	{
@@ -182,7 +183,7 @@ void	allez_ca_part(t_stack **stack_a, t_stack **stack_b, int cheap_a, int cheap_
 
 void	finding_the_one_to_move(t_stack **stack_a, t_stack **stack_b, int *tab)
 {
-	t_stack		*current_stack;
+	t_stack	*current_stack;
 	int		cost;
 	int		max;
 	int		price_a;
@@ -199,8 +200,9 @@ void	finding_the_one_to_move(t_stack **stack_a, t_stack **stack_b, int *tab)
 	while (current_stack)
 	{
 		price_a = cost_definer(taille_a, i);
-		price_b = cost_definer(taille_b, second_price(*stack_a, current_stack->nbr));
-		cost = total_cost(price_a, price_b); 
+		price_b = cost_definer(taille_b, second_price(*stack_a,
+					current_stack->nbr));
+		cost = total_cost(price_a, price_b);
 		if (max > cost)
 		{
 			max = cost;

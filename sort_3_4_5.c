@@ -6,7 +6,7 @@
 /*   By: lboudjel <lboudjel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 16:31:03 by lboudjel          #+#    #+#             */
-/*   Updated: 2023/11/15 16:36:10 by lboudjel         ###   ########.fr       */
+/*   Updated: 2023/11/20 15:20:54 by lboudjel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,6 +84,25 @@ int	find_smol(t_stack **stack)
 		now = now->next;
 	}
 	return (smol);
+}
+
+
+int	find_smallest_element(t_stack **stack)
+{
+	int		small;
+	t_stack	*tmp;
+
+	tmp = *stack;
+	small = (*stack)->nbr;
+	if (*stack == NULL)
+		return (0);
+	while (tmp)
+	{
+		if (small > tmp->nbr)
+			small = tmp->nbr;
+		tmp = tmp->next;
+	}
+	return (small);
 }
 
 t_stack	*mv_smol_up(t_stack *stack)

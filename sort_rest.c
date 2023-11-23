@@ -28,10 +28,8 @@ void	sorting(t_stack **stack_a, t_stack **stack_b)
 
 void	push_to_pile_b(t_stack **stack_a, t_stack **stack_b)
 {
-	t_stack	*current;
 	int		size;
 
-	current = *stack_a;
 	size = ft_stack_size(*stack_a);
 	while (size > 3)
 	{

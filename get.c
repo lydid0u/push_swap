@@ -12,12 +12,12 @@
 
 #include "push_swap.h"
 
-int	get_min_content(t_stack *pile)
+int	get_min_content(t_stack *stack)
 {
 	t_stack	*current;
 	int		min;
 
-	current = pile;
+	current = stack;
 	min = 2147483647;
 	while (current)
 	{
@@ -46,12 +46,12 @@ int	find_biggest_element(t_stack **stack)
 	return (big);
 }
 
-int	get_max_content(t_stack *pile)
+int	get_max_content(t_stack *stack)
 {
 	t_stack	*current;
 	int		max;
 
-	current = pile;
+	current = stack;
 	max = 0;
 	while (current)
 	{

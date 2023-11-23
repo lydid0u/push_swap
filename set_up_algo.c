@@ -12,39 +12,6 @@
 
 #include "push_swap.h"
 
-void	finding_the_one_to_move(t_stack **stack_a, t_stack **stack_b, int *tab)
-{
-	t_stack	*current_stack;
-	int		cost;
-	int		max;
-	int		price_a;
-	int		price_b;
-	int		i;
-	int		taille_a;
-	int		taille_b;
-
-	i = 0;
-	max = 2147483647;
-	current_stack = *stack_b;
-	taille_a = ft_stack_size(*stack_b);
-	taille_b = ft_stack_size(*stack_a);
-	while (current_stack)
-	{
-		price_a = cost_definer(taille_a, i);
-		price_b = cost_definer(taille_b, second_price(*stack_a,
-					current_stack->nbr));
-		cost = total_cost(price_a, price_b);
-		if (max > cost)
-		{
-			max = cost;
-			tab[0] = price_a;
-			tab[1] = price_b;
-		}
-		i++;
-		current_stack = current_stack->next;
-	}
-}
-
 int	second_price(t_stack *stack, int content)
 {
 	t_stack	*current;
@@ -67,6 +34,34 @@ int	second_price(t_stack *stack, int content)
 		current = current->next;
 	}
 	return (index);
+}
+void	finding_the_one_to_move(t_stack **stack_a, t_stack **stack_b, int *tab)
+{
+	t_stack	*current_stack;
+	int		cost;
+	int		max;
+	int		price_a;
+	int		price_b;
+	int		i;
+
+	i = 0;
+	max = 2147483647; // utiliser une macro ?
+	current_stack = *stack_b;
+	while (current_stack)
+	{
+		price_a = cost_definer_b(ft_stack_size(*stack_a), second_price(*stack_a,
+					current_stack->nbr));
+		price_b = cost_definer_a(*stack_b, i);
+		cost = total_cost(price_a, price_b);
+		if (max > cost)
+		{
+			max = cost;
+			tab[0] = price_b;
+			tab[1] = price_a;
+		}
+		i++;
+		current_stack = current_stack->next;
+	}
 }
 
 int	total_cost(int price_a, int price_b)
@@ -93,14 +88,39 @@ int	total_cost(int price_a, int price_b)
 	return (a + b);
 }
 
-int	cost_definer(int sizelist_a, int position)
+void	where_am_i(t_stack *stack)
+{
+	int	i;
+
+	i = 0;
+	while (stack)
+	{
+		stack->position = i;
+		stack = stack->next;
+		i++;
+	}
+}
+
+int cost_definer_a(t_stack *stack_b, int position) 
+{
+	int sizelist_a;
+	int	cost;
+	
+	sizelist_a = ft_stack_size(stack_b);
+    if (position > sizelist_a / 2) 
+        cost = sizelist_a - position;
+    else
+        cost = -position;
+    return cost;
+}
+
+int cost_definer_b(int sizelist, int position) 
 {
 	int	cost;
-
-	cost = 0;
-	if (position > sizelist_a / 2)
-		cost = sizelist_a - position;
-	else
-		cost = -position;
-	return (cost);
+	
+    if (position > sizelist / 2) 
+        cost = sizelist - position;
+    else
+        cost = -position;
+    return (cost);
 }

@@ -19,11 +19,11 @@ void	redefine_everything(t_stack **stack_a, t_stack **stack_b)
 	target_finder(*stack_a, *stack_b);
 }
 
-void	printf_lst_target(t_stack *pile_a)
+void	printf_lst_target(t_stack *stack_a)
 {
 	t_stack	*tmp;
 
-	tmp = pile_a;
+	tmp = stack_a;
 	printf("liste target : \n");
 	while (tmp)
 	{
@@ -230,19 +230,6 @@ void	target_finder(t_stack *stack_a, t_stack *stack_b)
 		if (current_stack_a->target == 0)
 			current_stack_a->target = find_smallest_element(&stack_b);
 		current_stack_a = current_stack_a->next;
-	}
-}
-
-void	where_am_i(t_stack *stack)
-{
-	int	i;
-
-	i = 0;
-	while (stack)
-	{
-		stack->position = i;
-		stack = stack->next;
-		i++;
 	}
 }
 

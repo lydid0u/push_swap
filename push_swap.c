@@ -33,6 +33,7 @@ int	algorithm(t_stack **stack_a, t_stack **stack_b)
 	{
 		push_to_pile_b(stack_a, stack_b);
 		sorting(stack_a, stack_b);
+		// print_stack(*stack_a);
 		put_min_top(stack_a);
 	}
 	return (1);
@@ -63,6 +64,7 @@ int	main(int argc, char **argv)
 			return (free_node(stack_a), ft_printf("Error4\n"), 0);
 	}
 	algorithm(&stack_a, &stack_b);
+	// print_stack(stack_a);
 	free_node(stack_a);
 	return (1);
 }

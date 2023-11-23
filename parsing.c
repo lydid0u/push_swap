@@ -56,7 +56,7 @@ int	in_quote(t_stack **stack_a, char *argv)
 	while (arg[i])
 	{
 		if (int_is_correct(arg[i]) == 0)
-			return (free_tab(arg), ft_printf("Error\n"), 0);
+			return (free_tab(arg), ft_printf("Error121\n"), 0);
 		create_node(stack_a, arg[i]);
 		i++;
 	}
@@ -71,7 +71,7 @@ int	nbr_listed(t_stack **stack_a, int argc, char **argv)
 	while (i < argc)
 	{
 		if (int_is_correct(argv[i]) == 0)
-			return (free_node(*stack_a), ft_printf("Error\n"), 0);
+			return (free_node(*stack_a), ft_printf("Error12\n"), 0);
 		create_node(stack_a, argv[i]);
 		if (!stack_a)
 			return (free_node(*stack_a), 0);

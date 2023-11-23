@@ -23,6 +23,7 @@ typedef struct s_stack
 {
 	int				nbr;
 	int				cost;
+	int				position;
 	struct s_stack	*next;
 }					t_stack;
 
@@ -86,12 +87,13 @@ void				free_node(t_stack *stack_a);
 void				free_tab(char **argv);
 
 //sort_rest
-void				printf_lst_target(t_stack *pile_a);
+void				printf_lst_target(t_stack *stack_a);
 int					position_of_the_cheapest_cost(t_stack *stack_a);
 void				choice_of_scenario(t_stack **stack_a, t_stack **stack_b);
 void				what_is_the_scenario(t_stack *stack_a, t_stack *stack_b);
 void				redefine_everything(t_stack **stack_a, t_stack **stack_b);
-int					cost_definer(int sizelist, int position);
+int cost_definer_a(t_stack *stack_b, int position);
+int cost_definer_b(int sizelist, int position);
 int					total_cost(int price_a, int price_b);
 void				finding_the_one_to_move(t_stack **stack_a,
 						t_stack **stack_b, int *tab);
@@ -100,5 +102,9 @@ void				allez_ca_part(t_stack **stack_a, t_stack **stack_b,
 void				sorting(t_stack **stack_a, t_stack **stack_b);
 void				push_to_pile_b(t_stack **stack_a, t_stack **stack_b);
 void				put_min_top(t_stack **stack);
+int	get_min_content(t_stack *stack);
+int	get_max_content(t_stack *stack);
+int	get_min_pos(t_stack *stack);
+
 
 #endif

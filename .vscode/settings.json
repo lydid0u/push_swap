@@ -3,6 +3,7 @@
         "push_swap.h": "c",
         "unistd.h": "c",
         "stdio.h": "c",
-        "ft_printf.h": "c"
+        "ft_printf.h": "c",
+        "ratio": "c"
     }
 }

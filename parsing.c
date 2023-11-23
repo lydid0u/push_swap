@@ -6,7 +6,7 @@
 /*   By: lboudjel <lboudjel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 17:49:22 by lboudjel          #+#    #+#             */
-/*   Updated: 2023/10/31 17:32:57 by lboudjel         ###   ########.fr       */
+/*   Updated: 2023/11/23 19:07:50 by lboudjel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,13 @@ t_stack	*create_node(t_stack **stack_a, char *argv)
 	long int	nbr;
 
 	nbr = ft_atoi(argv);
-	node = ft_lstnew(&nbr);
+	if (!(nbr >= -2147483648 && nbr <= 2147483647))
+	{
+		ft_printf("Error\n");
+		free_node(*stack_a);
+		exit(0);
+	}
+	node = ft_lstnew(nbr);
 	if (node == NULL)
 		return (NULL);
 	if (*stack_a == NULL)
@@ -32,14 +38,14 @@ t_stack	*create_node(t_stack **stack_a, char *argv)
 	return (node);
 }
 
-t_stack	*ft_lstnew(void *nbr)
+t_stack	*ft_lstnew(int nbr)
 {
 	t_stack	*new;
 
-	new = (t_stack *)malloc(sizeof(t_stack));
+	new = malloc(sizeof(t_stack));
 	if (new == NULL)
 		return (NULL);
-	new->nbr = *(int *)nbr;
+	new->nbr = nbr;
 	new->next = NULL;
 	return (new);
 }
@@ -56,7 +62,7 @@ int	in_quote(t_stack **stack_a, char *argv)
 	while (arg[i])
 	{
 		if (int_is_correct(arg[i]) == 0)
-			return (free_tab(arg), ft_printf("Error121\n"), 0);
+			return (free_tab(arg), ft_printf("Error\n"), 0);
 		create_node(stack_a, arg[i]);
 		i++;
 	}
@@ -71,7 +77,7 @@ int	nbr_listed(t_stack **stack_a, int argc, char **argv)
 	while (i < argc)
 	{
 		if (int_is_correct(argv[i]) == 0)
-			return (free_node(*stack_a), ft_printf("Error12\n"), 0);
+			return (free_node(*stack_a), ft_printf("Error\n"), 0);
 		create_node(stack_a, argv[i]);
 		if (!stack_a)
 			return (free_node(*stack_a), 0);

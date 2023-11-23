@@ -6,7 +6,7 @@
 /*   By: lboudjel <lboudjel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 15:11:41 by lboudjel          #+#    #+#             */
-/*   Updated: 2023/11/15 18:48:07 by lboudjel         ###   ########.fr       */
+/*   Updated: 2023/11/23 16:36:29 by lboudjel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ void	r_rotate_b(t_stack **stack_b)
 		ft_printf("rrb\n");
 	}
 }
+
 void	r_rotate_bbis(t_stack **stack_b)
 {
 	t_stack	*last;

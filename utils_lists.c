@@ -6,7 +6,7 @@
 /*   By: lboudjel <lboudjel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 16:31:09 by lboudjel          #+#    #+#             */
-/*   Updated: 2023/11/21 12:34:32 by lboudjel         ###   ########.fr       */
+/*   Updated: 2023/11/23 15:46:25 by lboudjel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,4 +65,17 @@ int	in_order(t_stack **stack_a)
 		i = i->next;
 	}
 	return (1);
+}
+
+void	where_am_i(t_stack *stack)
+{
+	int	i;
+
+	i = 0;
+	while (stack)
+	{
+		stack->position = i;
+		stack = stack->next;
+		i++;
+	}
 }

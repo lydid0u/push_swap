@@ -6,21 +6,23 @@
 /*   By: lboudjel <lboudjel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/11 19:35:48 by lboudjel          #+#    #+#             */
-/*   Updated: 2023/11/21 12:34:54 by lboudjel         ###   ########.fr       */
+/*   Updated: 2023/11/23 19:15:47 by lboudjel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	ft_atoi(char *str)
+long int	ft_atoi(char *str)
 {
-	int	i;
-	int	sign;
-	int	nb;
+	long int	i;
+	long int	sign;
+	long int	nb;
 
 	i = 0;
 	sign = 1;
 	nb = 0;
+	if (str[i] == '\0')
+		return (0);
 	while (str[i] == 32 || (str[i] >= 9 && str[i] <= 13))
 		i++;
 	if (str[i] == '-')
@@ -30,6 +32,8 @@ int	ft_atoi(char *str)
 	while (str[i] >= '0' && str[i] <= '9')
 	{
 		nb = nb * 10 + (str[i] - '0');
+		if (nb * sign > INT_MAX || nb * sign < INT_MIN)
+			return (2147483648);
 		i++;
 	}
 	return (nb * sign);
